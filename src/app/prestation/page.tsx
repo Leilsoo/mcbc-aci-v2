@@ -9,39 +9,6 @@ export const metadata: Metadata = {
     "Découvrez toutes les prestations MCBC-ACI : services de charpente, ossature bois, couverture et exemples de réalisations en Martinique.",
 };
 
-const works = [
-  {
-    title: "Pose de charpentes partout en Martinique",
-    img: "/charpente_Caillo_angle1.jpg",
-    desc: "Construction complète d'une ossature bois avec précision et respect des normes.",
-  },
-  {
-    title: "Fermette industrielle",
-    img: "/fermette industrielle.jpg",
-    desc: "Fabrication et pose de fermettes industrielles pour structures de grande portée.",
-  },
-  {
-    title: "Levage de charpente",
-    img: "/levage de la charpente.jpg",
-    desc: "Opérations complexes de levage et d'assemblage en toute sécurité.",
-  },
-  {
-    title: "Charpente de pergola",
-    img: "/charpente de pergola.JPG",
-    desc: "Design et réalisation de structures bois personnalisées pour espaces extérieurs.",
-  },
-  {
-    title: "Suite de fermes",
-    img: "/suite de fermes.jpg",
-    desc: "Mise en place coordonnée de multiples fermes pour couvrir de grandes portées.",
-  },
-  {
-    title: "Ossature bois complète",
-    img: "/ossature bois.jpg",
-    desc: "Construction d'une maison à ossature bois avec isolation et étanchéité intégrées.",
-  },
-];
-
 export default function PrestationPage() {
   return (
     <div className="space-y-12">
