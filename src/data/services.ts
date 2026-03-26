@@ -11,17 +11,17 @@ export const prestationServices: Service[] = [
     desc: "Conception, fabrication et pose de charpentes en bois massif ou lamellé-collé. Plans 3D précis avec CADWORK et MITECK.",
     images: [
       "/charpente_Caillo_angle1.jpg",
-      "/charpente_Caillo _angle 2.jpg",
+      "/charpente_Caillo_angle2.jpg",
       "/charpente_Caillo_interrieure-ossaturebois.jpg",
-      "/fermette industrielle 2.jpg",
+      "/fermette-industrielle-2.jpg",
     ],
   },
   {
     title: "Construction de maisons à ossature bois",
     desc: "Maisons performantes, personnalisées et adaptées au climat des Antilles. Structures durables et isolées.",
     images: [
-      "/ossature bois.jpg",
-      "/Squellette ossature bois.jpg",
+      "/ossature-bois.jpg",
+      "/squellette-ossature-bois.jpg",
     ],
   },
   {
@@ -38,11 +38,11 @@ export const prestationServices: Service[] = [
     title: "Intervention & restauration sur charpentes anciennes",
     desc: "Consolidation et remplacement de pièces défectueuses. Expertise artisanale.",
     images: [
-      "/charpente A1.jpg",
-      "/charpente A2.jpg",
-      "/charpente A3.jpg",
-      "/charpente A4.jpg",
-      "/charpente A5.jpg",
+      "/charpente-A1.jpg",
+      "/charpente-A2.jpg",
+      "/charpente-A3.jpg",
+      "/charpente-A4.jpg",
+      "/charpente-A5.jpg",
     ],
   },
   {
@@ -53,6 +53,6 @@ export const prestationServices: Service[] = [
   {
     title: "Normes anticycloniques",
     desc: "Réalisations conformes aux normes anticycloniques et réglementations Antilles. Sécurité garantie.",
-    image: "/image ouragan.jpg",
+    image: "/image-ouragan.jpg",
   },
 ];

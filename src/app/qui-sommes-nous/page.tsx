@@ -31,8 +31,8 @@ const values = [
 ];
 
 const teamPhotos = [
-  { src: "/equipe mcbc.jpg", caption: "Notre cœur d'équipe au siège du François" },
-  { src: "/caillo 004.jpg", caption: "Charpentiers MCBC en action sur chantier" },
+  { src: "/equipe-mcbc.jpg", caption: "Notre cœur d'équipe au siège du François" },
+  { src: "/caillo-004.jpg", caption: "Charpentiers MCBC en action sur chantier" },
   { src: "/IMG_20251006_084222.jpg", caption: "Zone de préfabrication ossature bois" },
   { src: "/IMG_20251006_084339.jpg", caption: "Contrôle qualité avant levage" },
   { src: "/charpente_Caillo_interrieure-ossaturebois.jpg", caption: "Assemblage de fermes industrielles" },
@@ -75,7 +75,7 @@ export default function AboutPage() {
           </div>
           <div className="relative overflow-hidden rounded-2xl border bg-ivoire shadow-soft">
             <Image
-              src="/equipe mcbc.jpg"
+              src="/equipe-mcbc.jpg"
               alt="Équipe MCBC-ACI"
               width={900}
               height={700}
