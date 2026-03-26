@@ -82,7 +82,7 @@ export default function Navbar() {
               href="/contact"
               className="rounded-full bg-bronze px-5 py-2.5 text-sm font-extrabold !text-white/85 shadow-md hover:opacity-90 transition-opacity"
             >
-              Devis gratuit
+              Contactez-nous
             </a>
           </li>
         </ul>
@@ -116,7 +116,7 @@ export default function Navbar() {
                 className="block rounded-full bg-bronze px-5 py-2.5 text-sm font-extrabold !text-white/85 text-center mt-2 hover:opacity-90 transition-opacity shadow-md"
                 onClick={() => setOpen(false)}
               >
-                Devis gratuit
+                Contactez-nous
               </a>
             </li>
           </ul>
