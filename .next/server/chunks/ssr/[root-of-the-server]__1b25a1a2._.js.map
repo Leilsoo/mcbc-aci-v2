@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/xavie/MCBC/mcbc-aci-v2/src/app/merci/page.tsx"],"sourcesContent":["// src/app/merci/page.tsx\r\n// ✅ Page de remerciement (utilise next/link au lieu de <a> pour un lien interne)\r\nimport Link from \"next/link\";\r\n\r\nexport default function MerciPage() {\r\n  return (\r\n    <section className=\"card mx-auto max-w-xl text-center\">\r\n      <h1 className=\"text-2xl font-bold\">Merci !</h1>\r\n      <p className=\"mt-2 text-sm text-foreground/80\">\r\n        Votre message a bien été envoyé. Nous revenons vers vous très vite.\r\n      </p>\r\n      {/* ✅ Link interne Next.js */}\r\n      <Link href=\"/\" className=\"btn-secondary mt-4 inline-block\">\r\n        Retour à l’accueil\r\n      </Link>\r\n    </section>\r\n  );\r\n}\r\n"],"names":[],"mappings":"AAAA,yBAAyB;AACzB,iFAAiF;;;;;;AACjF;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAQ,WAAU;;0BACjB,8OAAC;gBAAG,WAAU;0BAAqB;;;;;;0BACnC,8OAAC;gBAAE,WAAU;0BAAkC;;;;;;0BAI/C,8OAAC,uKAAI;gBAAC,MAAK;gBAAI,WAAU;0BAAkC;;;;;;;;;;;;AAKjE","debugId":null}}]
+}

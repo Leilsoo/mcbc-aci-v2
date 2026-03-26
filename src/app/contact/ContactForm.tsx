@@ -25,7 +25,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     // ⚠️ Important : garder la ref du <form> avant tout await (sinon event pooling React)
@@ -34,15 +34,17 @@ export default function ContactForm() {
     setStatus("sending");
     setErrorMsg(null);
 
-    try {
-      // 1) Récupère les champs du formulaire
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries()); // { name, email, subject, message }
+    // Lance l'async sans bloquer le retour
+    void (async () => {
+      try {
+        // 1) Récupère les champs du formulaire
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries()); // { name, email, subject, message }
 
-      // 2) Appel à notre API locale (même origine -> pas de CORS)
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        // 2) Appel à notre API locale (même origine -> pas de CORS)
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
@@ -72,9 +74,10 @@ export default function ContactForm() {
       setStatus("error");
     } catch {
       // ❌ Erreur réseau (ou autre exception inattendue)
-      setErrorMsg("Erreur réseau. Vérifiez votre connexion.");
-      setStatus("error");
-    }
+        setErrorMsg("Erreur réseau. Vérifiez votre connexion.");
+        setStatus("error");
+      }
+    })();
   }
 
   return (
@@ -108,7 +111,7 @@ export default function ContactForm() {
           <input
             id="subject"
             name="subject"
-            placeholder="Refonte site vitrine / Création e-commerce…"
+            placeholder="Votre Projet... / Votre question..."
             className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:ring-2"
           />
         </div>

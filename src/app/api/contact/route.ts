@@ -3,6 +3,13 @@
 
 import { NextResponse } from "next/server";
 
+type FormspreeResponse = {
+  ok?: boolean;
+  next?: string;
+  error?: string;
+  errors?: { message?: string }[];
+};
+
 // Lis depuis l'env si dispo, sinon fallback sur ton ID
 const FORMSPREE_ID = process.env.FORMSPREE_ID ?? "xvgwzyen";
 
@@ -16,7 +23,7 @@ export function GET() {
 export async function POST(req: Request) {
   try {
     // 1) Parse JSON
-    const data = (await req.json().catch(() => ({}))) as Record<string, string>;
+    const data = (await req.json().catch(() => ({} as Record<string, string>))) as Record<string, string>;
     const { name, email, subject, message } = data;
 
     // 2) Validations
@@ -44,7 +51,7 @@ export async function POST(req: Request) {
       cache: "no-store",
     });
 
-    const payload = await upstream.json().catch(() => ({}));
+    const payload = (await upstream.json().catch(() => ({}))) as FormspreeResponse;
 
     if (!upstream.ok) {
       console.error("[/api/contact] Formspree error:", upstream.status, payload);

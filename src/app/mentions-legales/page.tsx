@@ -8,23 +8,23 @@ export default function MentionsLegalesPage() {
     <div className="mx-auto max-w-3xl px-4 py-12 prose prose-gray">
       <h1>Mentions légales</h1>
 
-      <h2>Éditeur du site</h2>
+      <h2>Editeur du site</h2>
       <p>
-        <strong>MCBC.ACI</strong><br />
-        Forme juridique : (ex. SAS / Auto-entreprise)<br />
-        Capital social : (le cas échéant)<br />
-        SIREN / SIRET : (à compléter)<br />
-        Siège social : 00 rue Exemple, 75000 Paris, France<br />
-        Email : contact@mcbc-aci.fr<br />
-        Téléphone : 01 23 45 67 89
+        <strong>MCBC-ACI</strong><br />
+        SARL au capital de 8 000,00 euros<br />
+        R.C.S. FORT DE FRANCE : B 419 220 801 - gestion n98 B 583<br />
+        SIRET : [A COMPLETER]<br />
+        Siège social : Zone Artisanale de Trianon Nord, Bonnaire 97240 LE FRANCOIS, Martinique<br />
+        Email : mcbc.aci@wanadoo.fr<br />
+        Telephones : 0596 54 38 98 / 0696 45 67 73
       </p>
 
       <h2>Directeur / Directrice de la publication</h2>
-      <p>Nom Prénom</p>
+      <p>[A COMPLETER]</p>
 
-      <h2>Hébergement</h2>
+      <h2>Hebergement</h2>
       <p>
-        Hébergeur : Vercel Inc.<br />
+        Hebergeur : Vercel Inc.<br />
         Adresse : 340 S Lemon Ave #4133, Walnut, CA 91789, USA<br />
         Site : https://vercel.com
       </p>

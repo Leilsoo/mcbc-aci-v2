@@ -1,103 +1,147 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Section from "@/components/Section";
+import ServiceCard from "@/components/ServiceCard";
+import ContactDetails from "@/components/ContactDetails";
+import { prestationServices } from "@/data/services";
+
+/**
+ * PAGE D'ACCUEIL (/page.tsx)
+ * 
+ * 🎯 OBJECTIF: présenter les services MCBC + tunnel de vente optimisé
+ * 
+ * 📍 STRUCTURE:
+ * 1. Hero (titre + image équipe + CTA)
+ * 2. Section "Nos services" avec cartes image + CTA devis
+ * 3. Section "Rassurance" (3 points clés: expérience, local, devis gratuit)
+ * 4. Section CTA finale "Vous avez un projet ?"
+ * 
+ * 🔧 À MODIFIER:
+ * - Services array: titres, descriptions, images (chemins public/)
+ * - Textes des sections (subtitle)
+ * - CTA buttons
+ */
 
 export default function Home() {
+  // 🎯 SERVICES - À MODIFIER ICI
+  // Chaque service doit avoir: title, desc, image (chemin vers public/)
+  // Chemins disponibles (public/):
+  //   - /ossature bois.jpg
+  //   - /caillo 004.jpg
+  //   - /levage de la charpente.jpg
+  //   - /charpente de pergola.JPG
+  //   - /fermette industrielle.jpg
+  // etc.
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* HERO: titre principal + image équipe + CTA */}
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* 
+        📍 SECTION: NOS SERVICES
+        - Affiche 6 cartes avec images + descriptions + CTA "Devis gratuit"
+        - Chaque ServiceCard reçoit: title, desc, image
+        - À MODIFIER: subtitle, titres, descriptions, images
+      */}
+      <Section
+        id="services"
+        title="Nos prestations"
+        subtitle="Un accompagnement complet : étude, fabrication, pose et suivi pour vos projets de charpente, ossature bois et couverture."
+      >
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {prestationServices.map((service) => (
+            <ServiceCard
+              key={service.title}
+              title={service.title}
+              desc={service.desc}
+              image={service.image}
+              images={service.images}
             />
-            Deploy now
+          ))}
+        </ul>
+      </Section>
+
+      {/* SECTION: COORDONNÉES (aperçu sur la page d'accueil) */}
+      <Section id="contact-summary" title="Coordonnées" subtitle="Contactez-nous directement pour un devis gratuit">
+        <div className="mx-auto max-w-3xl">
+          <ContactDetails />
+        </div>
+      </Section>
+
+      {/* 
+        📍 SECTION: RASSURANCE (Trust Signals)
+        - 3 points clés pour rassurer le client + augmenter conversion
+        - À MODIFIER: textes, nombres (30 ans, etc.)
+        - 💡 Logique tunnel de vente: construire confiance avant CTA finale
+      */}
+      <Section
+        id="trust"
+        title="Pourquoi choisir MCBC ?"
+        subtitle=""
+      >
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Point 1: Expérience */}
+          <div className="rounded-2xl border bg-ivoire p-6 text-center">
+            <div className="text-4xl font-bold text-bronze">30+</div>
+            <h3 className="mt-2 text-lg font-semibold text-anthracite">
+              Ans d'expérience
+            </h3>
+            <p className="mt-2 text-anthracite/80 text-sm">
+              Depuis 1994, MCBC accompagne particuliers et professionnels en Martinique.
+            </p>
+          </div>
+
+          {/* Point 2: Local */}
+          <div className="rounded-2xl border bg-ivoire p-6 text-center">
+            <div className="text-4xl font-bold text-bronze">🏝️</div>
+            <h3 className="mt-2 text-lg font-semibold text-anthracite">
+              Entreprise locale
+            </h3>
+            <p className="mt-2 text-anthracite/80 text-sm">
+              Basée en Martinique, nous connaissons le climat tropical et les normes locales.
+            </p>
+          </div>
+
+          {/* Point 3: Devis Gratuit */}
+          <div className="rounded-2xl border bg-ivoire p-6 text-center">
+            <div className="text-4xl font-bold text-bronze">✓</div>
+            <h3 className="mt-2 text-lg font-semibold text-anthracite">
+              Devis gratuit
+            </h3>
+            <p className="mt-2 text-anthracite/80 text-sm">
+              Consultation sans engagement, prix compétitif.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* 
+        📍 SECTION: CTA FINALE
+        - "Vous avez un projet ?" + 2 boutons
+        - À MODIFIER: textes boutons, hrefs
+        - 💡 Logique tunnel: dernier appel à action avant footer
+      */}
+      <Section
+        id="cta"
+        title="Vous avez un projet de charpente, ossature bois ou couverture ?"
+        subtitle="Contactez MCBC pour un devis gratuit et personnalisé."
+      >
+        <div className="flex justify-center gap-4 flex-wrap">
+          <a
+            href="/contact"
+            className="rounded-lg bg-bronze px-6 py-3 text-anthracite font-extrabold hover:opacity-90 transition"
+            aria-label="Contactez-nous - Devis gratuit"
+          >
+            Contactez-nous
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/services"
+            className="rounded-lg border-2 border-bronze px-6 py-3 text-bronze font-medium hover:bg-bronze hover:text-white transition"
           >
-            Read our docs
+            En savoir plus sur nos services
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </Section>
+    </>
   );
 }
+

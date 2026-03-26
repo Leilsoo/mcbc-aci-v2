@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
   // 🔗 Routes statiques actuelles
-  const routes = ["", "services", "realisations", "contact", "merci"];
+  const routes = ["", "services", "realisations", "contact", "merci", "qui-sommes-nous"];
 
   const now = new Date();
 

@@ -15,30 +15,30 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // 🎨 Palette simple
+        // 🎨 High-end MCBC palette
+        anthracite: "#2B2B2B",        // Anthracite (text / dark backgrounds)
+        bronze: "#A67C52",           // Bronze / marron doré (accents, CTA)
+        ivoire: "#F8F3E7",           // Ivoire (light background)
+        white: "#FFFFFF",            // Pur blanc
+        // Backwards-compatible brand alias
         brand: {
-          50:  "#eef6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",  // bleu principal
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
+          anthracite: "#2B2B2B",
+          bronze: "#A67C52",
+          ivoire: "#F8F3E7",
+          white: "#FFFFFF",
         },
+        // Keep an ink scale where 900 maps to anthracite
         ink: {
-          50:  "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#64748b",
-          600: "#475569",
-          700: "#334155",
-          800: "#1f2937",
-          900: "#0f172a",
+          50:  "#fbfaf8",
+          100: "#f7f5f2",
+          200: "#efeae4",
+          300: "#e6dfd7",
+          400: "#d1c6ba",
+          500: "#b8a898",
+          600: "#8f7a66",
+          700: "#64523f",
+          800: "#3b2d23",
+          900: "#2B2B2B",
         },
       },
       fontFamily: {
