@@ -76,10 +76,6 @@ export default function Hero() {
             className="object-cover"
             priority
           />
-          <div className="absolute bottom-4 left-4 bg-ivoire/90 px-3 py-1 rounded-md">
-            <p className="text-sm font-semibold text-anthracite">Expertise en menuiserie bois</p>
-            <p className="text-xs text-anthracite/80">Depuis 1994 en Martinique</p>
-          </div>
         </div>
       </div>
     </section>
