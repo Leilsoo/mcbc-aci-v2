@@ -31,7 +31,6 @@ export const prestationServices: Service[] = [
       "/couverture1.jpg",
       "/couverture2.jpg",
       "/couverture3.jpg",
-      "/couverture4.jpg",
     ],
   },
   {
