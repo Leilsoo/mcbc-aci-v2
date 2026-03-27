@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="5" fill="#2B2B2B"/>
-  <text x="16" y="13" font-family="Georgia, 'Times New Roman', serif" font-size="8.5" font-weight="bold" fill="#A67C52" text-anchor="middle">MC</text>
-  <text x="16" y="23" font-family="Georgia, 'Times New Roman', serif" font-size="8.5" font-weight="bold" fill="#A67C52" text-anchor="middle">BC</text>
+  <!-- Tête du marteau -->
+  <rect x="5" y="4" width="22" height="11" rx="2" fill="#A67C52"/>
+  <!-- Manche -->
+  <rect x="13" y="15" width="6" height="13" rx="2" fill="#A67C52"/>
 </svg>
